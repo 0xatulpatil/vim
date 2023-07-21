@@ -32,6 +32,9 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>e", ":Lex 30<CR><CR>", opts)
 
+-- Search 
+
+keymap("n", "<leader>/", ":noh<CR>", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -40,7 +43,7 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts) 
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 --Insert - Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -63,3 +66,20 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- high powered remaps from a fancy youtube video
+keymap("n", "J", "mzJ`z", opts) -- when you shift-j, cursor remains in place while the lines folds
+keymap("n", "<C-d>", "<C-d>zz", opts) -- scroll and keep curson in center
+keymap("n", "<C-u>", "<C-u>zz", opts) -- scroll and keep curson in center
+
+keymap("n", "n", "nzzzv", opts) -- keeps curson in middle when searching in files 
+keymap("n", "N", "Nzzzv", opts)
+keymap("x", "<leader>p", "\"_dP", opts) -- pastes into void registor,
+keymap("n", "<leader>d", "\"_d", opts)
+keymap("v", "<leader>d", "\"_d", opts)
+
+keymap("n", "<leader>y", "\"+y", opts) -- yanks into system clipboard
+keymap("v", "<leader>y", "\"+y", opts) -- yanks into system clipboard
+keymap("n", "<leader>Y", "\"+Y", opts) -- yanks into system clipboard
+
+
