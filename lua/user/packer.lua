@@ -102,6 +102,18 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+-- Autopairs
+  use {
+	{"windwp/nvim-autopairs"},
+	{"windwp/nvim-ts-autotag"}
+	 -- config = function() require("nvim-autopairs").setup {} end
+  }
+-- Commenting 
+  use {
+	 'numToStr/Comment.nvim'
+  }
+
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
