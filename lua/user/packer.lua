@@ -45,11 +45,14 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use { "catppuccin/nvim", as = "catppuccin" }
-  -- Automatically set up your configuration after cloning packer.nvim
+  use {'kyazdani42/nvim-web-devicons'}
+
   use {
     'nvim-lualine/lualine.nvim',
 	 requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  -- Color Schemes
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
 
 -- Completion
@@ -88,15 +91,17 @@ return packer.startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} ) 
 
-use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.2',
--- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+  use {
+	'nvim-telescope/telescope.nvim', tag = '0.1.2',
+	-- or                            , branch = '0.1.x',
+	requires = { {'nvim-lua/plenary.nvim'} }
+  }
 -- nvim-treesitter
   use {
 	'nvim-tree/nvim-tree.lua'
   }
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
 -- Autopairs
   use {
 	{"windwp/nvim-autopairs"},

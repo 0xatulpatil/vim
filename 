@@ -19,10 +19,10 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Base Remaps -- 
+-- Base Remaps - 
 
 keymap("n", "<C-a>", "ggVG",opts)
-keymap("n", "<C-s>", ":w<cr>",opts)
+keymap("n", "<C-s>", ":w",opts)
 
 
 
