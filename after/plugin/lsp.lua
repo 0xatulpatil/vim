@@ -1,11 +1,11 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls" }
+	ensure_installed = { "lua_ls", "tsserver" }
 })
 
 -- To disable diagnostic errors in-line and enable them on hover
 vim.diagnostic.config({
-  virtual_text = true
+	virtual_text = true
 })
 
 -- Show line diagnostics automatically in hover window
@@ -18,11 +18,10 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {f
 -- custom symbols for diagnostics
 local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- keymaps to browse between diagnostics (errors and warnings)
 vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
-

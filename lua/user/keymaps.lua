@@ -19,12 +19,11 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Base Remaps -- 
+-- Base Remaps --
 
-keymap("n", "<C-a>", "ggVG",opts)
-keymap("n", "<C-s>", ":w<cr>",opts)
-
-
+keymap("n", "<C-a>", "ggVG", opts)
+keymap("n", "<C-s>", ":w<cr>", opts)
+keymap("n", "F", ":lua vim.lsp.buf.format()<cr>", opts) -- formatting
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -36,9 +35,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<C-w>", ":BufferLinePickClose<cr>", opts)
 --keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", opts)
 
-
-
--- Search 
+-- Search
 
 keymap("n", "<leader>/", ":noh<CR>", opts)
 -- Resize with arrows
@@ -47,7 +44,7 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers 
+-- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 --Insert - Stay in indent mode
@@ -78,14 +75,12 @@ keymap("n", "J", "mzJ`z", opts) -- when you shift-j, cursor remains in place whi
 keymap("n", "<C-d>", "<C-d>zz", opts) -- scroll and keep curson in center
 keymap("n", "<C-u>", "<C-u>zz", opts) -- scroll and keep curson in center
 
-keymap("n", "n", "nzzzv", opts) -- keeps curson in middle when searching in files 
+keymap("n", "n", "nzzzv", opts) -- keeps curson in middle when searching in files
 keymap("n", "N", "Nzzzv", opts)
-keymap("x", "<leader>p", "\"_dP", opts) -- pastes into void registor,
-keymap("n", "<leader>d", "\"_d", opts)
-keymap("v", "<leader>d", "\"_d", opts)
+keymap("x", "<leader>p", '"_dP', opts) -- pastes into void registor,
+keymap("n", "<leader>d", '"_d', opts)
+keymap("v", "<leader>d", '"_d', opts)
 
-keymap("n", "<leader>y", "\"+y", opts) -- yanks into system clipboard
-keymap("v", "<leader>y", "\"+y", opts) -- yanks into system clipboard
-keymap("n", "<leader>Y", "\"+Y", opts) -- yanks into system clipboard
-
-
+keymap("n", "<leader>y", '"+y', opts) -- yanks into system clipboard
+keymap("v", "<leader>y", '"+y', opts) -- yanks into system clipboard
+keymap("n", "<leader>Y", '"+Y', opts) -- yanks into system clipboard
