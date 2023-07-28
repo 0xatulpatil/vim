@@ -5,7 +5,7 @@ require('rose-pine').setup({
 	variant = 'main',
 	--- @usage 'main'|'moon'|'dawn'
 	dark_variant = 'main',
-	bold_vert_split = true,
+	bold_vert_split = false,
 	dim_nc_background = true,
 	disable_background = false,
 	disable_float_background = false,
@@ -46,12 +46,12 @@ require('rose-pine').setup({
 
 		-- Blend colours against the "base" background
 		CursorLine = { bg = 'foam', blend = 10 },
-		StatusLine = { fg = 'love', bg = 'love', blend = 10 },
+		StatusLine = { fg = 'rose', bg = 'foam', blend = 10 },
 
 		-- By default each group adds to the existing config.
 		-- If you only want to set what is written in this config exactly,
 		-- you can set the inherit option:
-		Search = { bg = 'gold', inherit = false },
+		Search = { bg = 'highlight_high', inherit = false },
 	}
 })
 vim.cmd('colorscheme rose-pine')
