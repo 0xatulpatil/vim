@@ -61,6 +61,7 @@ return packer.startup(function(use)
 			require("toggleterm").setup()
 		end,
 	})
+	use("karb94/neoscroll.nvim")
 	-- Completion
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -106,9 +107,7 @@ return packer.startup(function(use)
 	})
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	-- nvim-treesitter
-	use({
-		"nvim-tree/nvim-tree.lua",
-	})
+	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- Autopairs
@@ -118,9 +117,7 @@ return packer.startup(function(use)
 		-- config = function() require("nvim-autopairs").setup {} end
 	})
 	-- Commenting
-	use({
-		"numToStr/Comment.nvim",
-	})
+	use({		"numToStr/Comment.nvim",})
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

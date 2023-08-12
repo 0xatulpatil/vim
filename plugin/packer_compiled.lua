@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/oxatul/.local/share/nvim/site/pack/packer/start/moonfly",
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/oxatul/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/oxatul/.local/share/nvim/site/pack/packer/start/null-ls.nvim",

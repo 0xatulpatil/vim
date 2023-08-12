@@ -5,7 +5,7 @@ require("mason-lspconfig").setup({
 
 -- To disable diagnostic errors in-line and enable them on hover
 vim.diagnostic.config({
-	virtual_text = true
+	virtual_text = false
 })
 
 -- Show line diagnostics automatically in hover window
@@ -24,4 +24,17 @@ end
 
 -- keymaps to browse between diagnostics (errors and warnings)
 vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+
+-- clangd warning -- 
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+
+require("lspconfig").clangd.setup {
+  on_attach = on_attach,
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}

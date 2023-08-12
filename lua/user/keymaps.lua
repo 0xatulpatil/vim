@@ -23,7 +23,7 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-a>", "ggVG", opts)
 keymap("n", "<C-s>", ":w<cr>", opts)
-keymap("n", "F", ":lua vim.lsp.buf.format()<cr>", opts) -- formatting
+keymap("n", "<C-f>", ":lua vim.lsp.buf.format()<cr>", opts) -- formatting
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
