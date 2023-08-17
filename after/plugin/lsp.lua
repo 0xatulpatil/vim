@@ -5,7 +5,7 @@ require("mason-lspconfig").setup({
 
 -- To disable diagnostic errors in-line and enable them on hover
 vim.diagnostic.config({
-	virtual_text = false
+	virtual_text = true
 })
 
 -- Show line diagnostics automatically in hover window

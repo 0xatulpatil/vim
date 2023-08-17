@@ -7,7 +7,7 @@ require('rose-pine').setup({
 	dark_variant = 'main',
 	bold_vert_split = false,
 	dim_nc_background = true,
-	disable_background = false,
+	disable_background = true,
 	disable_float_background = false,
 	disable_italics = false,
 
@@ -56,7 +56,8 @@ require('rose-pine').setup({
 })
 vim.cmd('colorscheme rose-pine')
 
-
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 -- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 -- if not status_ok then

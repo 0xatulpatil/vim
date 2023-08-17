@@ -117,7 +117,7 @@ return packer.startup(function(use)
 		-- config = function() require("nvim-autopairs").setup {} end
 	})
 	-- Commenting
-	use({		"numToStr/Comment.nvim",})
+	use({ "numToStr/Comment.nvim" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
