@@ -118,6 +118,8 @@ return packer.startup(function(use)
 	})
 	-- Commenting
 	use({ "numToStr/Comment.nvim" })
+	--git
+	use({ "lewis6991/gitsigns.nvim" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

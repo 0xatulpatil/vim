@@ -16,10 +16,11 @@ null_ls.setup({
 		formatting.prettier.with({
 			extra_args = {
 				--	"--no-semi",
-				--"--single-quote",
-				--"--jsx-single-quote",
-
-			--"check_package_json"
+				-- "--single-quote",
+				-- "--jsx-single-quote",
+				"--config-precedence", -- config file has precedence over these custom args
+				"prefer-file",
+				--"check_package_json"
 			},
 		}),
 		--    formatting.black.with { extra_args = { "--fast" } },
