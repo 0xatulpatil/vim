@@ -9,6 +9,7 @@ local keymap = vim.api.nvim_set_keymap
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.editorconfig = true
 
 -- Modes
 --   normal_mode = "n",
@@ -23,7 +24,7 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-a>", "ggVG", opts)
 keymap("n", "<C-s>", ":w<cr>", opts)
-keymap("n", "<C-f>", ":lua vim.lsp.buf.format()<cr>", opts) -- formatting
+keymap("n", "<C-f>", ":lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts) -- formatting
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -32,7 +33,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 --keymap("n", "<leader>e", ":Lex 30<CR><CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<C-w>", ":BufferLinePickClose<cr>", opts)
+-- keymap("n", "<C-w>", ":BufferLinePickClose<cr>", opts)
 --keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", opts)
 
 -- Search

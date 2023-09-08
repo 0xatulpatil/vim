@@ -1,4 +1,4 @@
-local colorscheme = "rose-pine"
+local colorscheme = "rose-pine";
 
 require('rose-pine').setup({
 	--- @usage 'auto'|'main'|'moon'|'dawn'
@@ -6,7 +6,7 @@ require('rose-pine').setup({
 	--- @usage 'main'|'moon'|'dawn'
 	dark_variant = 'main',
 	bold_vert_split = false,
-	dim_nc_background = true,
+	dim_nc_background = false,
 	disable_background = true,
 	disable_float_background = false,
 	disable_italics = false,

@@ -5,6 +5,8 @@ local lsp = require("lsp-zero").preset({
 	suggest_lsp_servers = true,
 })
 local luasnip = require("luasnip")
+luasnip.filetype_extend("javascript", { "javascriptreact", "react", "react-ts", "react-es7", "next", "next-ts", "typescript" });
+
 lsp.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
@@ -61,3 +63,20 @@ cmp.setup({
 		}),
 	},
 })
+
+-- function to stop tab moving to random places when you leave a snippet completion
+
+function leave_snippet()
+    if
+        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
+    then
+        require('luasnip').unlink_current()
+    end
+end
+
+-- stop snippets when you leave to normal mode
+vim.api.nvim_command([[
+    autocmd ModeChanged * lua leave_snippet()
+]])
