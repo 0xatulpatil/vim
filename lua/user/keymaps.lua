@@ -35,6 +35,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<C-w>", ":BufferLinePickClose<cr>", opts)
 --keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", opts)
+-- delete buffers/window
+keymap("n", "<leader>w", ":b# | bd# <CR>", opts)
 
 -- Search
 

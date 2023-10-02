@@ -52,6 +52,7 @@ return packer.startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	-- Color Schemes
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "rose-pine/neovim", as = "rose-pine" })
 	use({ "bluz71/vim-moonfly-colors", as = "moonfly" })
 	use({
@@ -105,7 +106,8 @@ return packer.startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({"nvimtools/none-ls.nvim"})
+	use("MunifTanjim/prettier.nvim")
 	-- nvim-treesitter
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
@@ -116,11 +118,15 @@ return packer.startup(function(use)
 		{ "windwp/nvim-ts-autotag" },
 		-- config = function() require("nvim-autopairs").setup {} end
 	})
+	-- indents
+	use({"lukas-reineke/indent-blankline.nvim"})
 	-- Commenting
 	use({ "numToStr/Comment.nvim" })
 	--git
 	use({ "lewis6991/gitsigns.nvim" })
 
+	-- other extensions
+	use({ "davidgranstrom/nvim-markdown-preview" });
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
