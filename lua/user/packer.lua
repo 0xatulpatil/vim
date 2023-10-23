@@ -111,6 +111,7 @@ return packer.startup(function(use)
 	-- nvim-treesitter
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	use({"RRethy/vim-illuminate"})
 
 	-- Autopairs
 	use({
