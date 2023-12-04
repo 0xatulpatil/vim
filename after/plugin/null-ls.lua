@@ -27,6 +27,12 @@ null_ls.setup({
 		formatting.clang_format,
 		formatting.stylua,
 		formatting.google_java_format,
-		--  diagnostics.flake8,
+		formatting.gofumpt,
+		formatting.goimports_reviser,
+
+		--  diagnostics.flake8
 	},
 })
+
+
+
