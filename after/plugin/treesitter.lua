@@ -5,6 +5,8 @@ require("nvim-treesitter.configs").setup({
 		-- low level
 		"java",
 		"c",
+		"go",
+
 		-- scripting
 		"javascript",
 		"lua",

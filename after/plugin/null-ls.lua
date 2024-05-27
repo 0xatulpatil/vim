@@ -11,7 +11,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		formatting.prettier.with({
 			extra_args = {
@@ -23,7 +23,7 @@ null_ls.setup({
 				--"check_package_json"
 			},
 		}),
-		--    formatting.black.with { extra_args = { "--fast" } },
+		formatting.black.with { extra_args = { "--fast" } },
 		formatting.clang_format,
 		formatting.stylua,
 		formatting.google_java_format,
