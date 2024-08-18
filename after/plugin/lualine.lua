@@ -6,6 +6,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
+		show_filename_only = false,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
@@ -25,7 +26,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff" },
-		lualine_c = { "filename" },
+		lualine_c = { {"filename", path = 1} },
 		lualine_x = {
 			{
 				"diagnostics",
@@ -35,8 +36,8 @@ lualine.setup({
 			"encoding",
 			"filetype",
 		},
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_y = {},
+		lualine_z = {},
 	},
 	inactive_sections = {
 		lualine_a = {},
